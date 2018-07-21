@@ -3,14 +3,16 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
+
 class Crack():
     def __init__(self, url, email, psw, name):
         self.url = url
-        self.browser = webdriver.Chrome()
+        # self.browser = webdriver.Chrome("./plugin/chromedriver") #win
+        self.browser = webdriver.Chrome("./plugin/chromedriver")  # linux
         self.wait = WebDriverWait(self.browser, 100)
         self.email = email
         self.psw = psw
-        self.name =name
+        self.name = name
         self.BORDER = 6
 
     def open(self):

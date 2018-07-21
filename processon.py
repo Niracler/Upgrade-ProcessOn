@@ -1,3 +1,4 @@
+import argparse
 from concurrent.futures import ThreadPoolExecutor
 import random
 import re
@@ -76,7 +77,11 @@ def make(user):
 
 
 if __name__ == "__main__":
-    # url = "https://www.processon.com/i/5ad16f4be4b0518eacae31fb"
-    url = input("请输入你的邀请链接：")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("url")
+    args = parser.parse_args()
+    url = args.url
+
+    # url = "https://www.processon.com/i/5aee5c10e4b02c126a501e9b"
     for i in range(100):
         make(getuser())
